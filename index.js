@@ -18,7 +18,8 @@ do {
 console.log (`La suma de los números ingresados es: ${ingreso}`);
 
 // 3 //
-let numeroIncognita = Math.floor(Math.random()*100)+1
+let numeroIncognita = 50;
+//Math.floor(Math.random()*100)+1
 console.log(numeroIncognita);
 let intentos = 0
 let numeroingresado 
@@ -170,33 +171,31 @@ console.log (`El numero menor es: ${minnum}`)
 minimo(arreglo5);
 
 // 13 //
-function juguemos(){
     let jugador1 = prompt(" Jugador 1 ingresa tu nombre")
     let jugador2 = prompt(" Jugador 2 ingrese tu nombre")
-    console.log(`Empieza el juego entre ${jugador1} y ${jugador2}!\n`);
-while (true) {
-    let jugada1 = prompt(`${jugador1}, elige Piedra, Papel o Tijeras:`)
-    let jugada2 = prompt(`${jugador2}, elige Piedra, Papel o Tijeras:`)
+    let jugada1
+    let jugada2
+    let ganador = false
+    //console.log(`Empieza el juego entre ${jugador1} y ${jugador2}!\n`);
+    // 1 Piedra
+    // 2 Papel
+    // 3 Tijeras
+while (ganador == false) {
+    jugada1 = parseInt(prompt("jugador1, elige una opcion Piedra (1), Papel (2) o Tijeras (3)"))
+    jugada2 =  parseInt(prompt("jugador2, elige una opcion Piedra (1), Papel (2) o Tijeras (3)"))
 
- if (jugada1 === jugada2){
-    console.log("Empate");
-    continue;
-
-} else if (
-    (jugada1 === "Piedra" && jugada2 === "Tijeras") ||
-    (jugada1 ===  "Papel"  && jugada2 === "Piedra") || 
-    (jugada1 === "Tijeras" && jugada2 === "Papel")
-) {  
+ if (jugada1 == 1 && jugada2 == 3 || jugada1 ==  2  && jugada2 == 1 || jugada1 == 3 && jugada2 == 2) {  
+        ganador = true
         console.log(`¡${jugador1} es el ganador del juego!`);
-        break;
-} else { 
-            console.log(`¡${jugador2} es el ganador del juego!`);
-            break;
-        }
-
-    }
+        
+} else if ( jugada2 == 1  && jugada1 == 3 || jugada2 ==  2  && jugada1 == 1 || jugada2 == 3 && jugada1 == 2) { 
+            ganador = true
+            console.log(`¡${jugador2} es el ganador del juego!`);         
+}else {
+    console.log ("Empate")
 }
-juguemos();
+}
+
 
 // 14 //
 let lado = 5
